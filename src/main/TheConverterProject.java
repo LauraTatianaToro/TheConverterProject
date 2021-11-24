@@ -6,14 +6,14 @@ import view.ConverterWindow;
 
 public class TheConverterProject {
 
-	public TheConverterProject() {
-		// TODO Auto-generated constructor stub
-	}
 
+//main should call the controller
 	/**
 	 * Launch the application.
 	 */
 	public static void main(String[] args) {
+		
+		
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
