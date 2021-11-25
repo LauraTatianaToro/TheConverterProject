@@ -1,5 +1,6 @@
 package controller;
 
+import javax.swing.JTextArea;
 import javax.swing.JTextField;
 
 import model.*;
@@ -28,7 +29,7 @@ public class StateChanger {
 	Invoker invoker;
 	
 		
-	public StateChanger(String cm, JTextField feetArea, JTextField meterArea) {
+	public StateChanger(String cm, JTextArea feetArea, JTextArea meterArea) {
 		this.cm = cm;
 		if (isInputCorrect(cm) == true) {
 			intCm =  Integer.parseInt(cm);
@@ -54,11 +55,9 @@ public class StateChanger {
 		System.out.println("converted back to double " + stringFeet);
 		
 		String stringMeter = String.valueOf(meterConversion.getMeters());
-				
-		//String stringMeter =  String.valueOf(meterConversion.getMeters());
 		
-		feetArea.setText(stringFeet);
-		meterArea.setText(stringMeter);
+		feetArea.setText(stringFeet +  " ft");
+		meterArea.setText(stringMeter + " m");
 		
 	}
 	

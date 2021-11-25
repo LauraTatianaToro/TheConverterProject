@@ -2,6 +2,7 @@ package view;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
+import javax.swing.JTextArea;
 import javax.swing.border.EmptyBorder;
 
 import controller.StateChanger;
@@ -24,13 +25,12 @@ public class ConverterWindow extends JFrame {
 	 */
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
-	private JTextField FeetConversionArea;
-	private JTextField CentimetersConversionArea;
-	private JTextField MeterConversionArea;
+	private JTextArea FeetConversionArea;
+	private JTextArea CentimetersConversionArea;
+	private JTextArea MeterConversionArea;
 
 	StateChanger statechanger;
 	String cm;
-	private String feet;
 
 	/**
 	 * Create the frame.
@@ -56,25 +56,22 @@ public class ConverterWindow extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		FeetConversionArea = new JTextField();
+		FeetConversionArea = new JTextArea();
 		FeetConversionArea.setEditable(false);
-		FeetConversionArea.setHorizontalAlignment(SwingConstants.LEFT);
 		FeetConversionArea.setBackground(Color.GREEN);
 		FeetConversionArea.setBounds(106, 0, 194, 161);
 		contentPane.add(FeetConversionArea);
 		FeetConversionArea.setColumns(10);
 
 		
-		CentimetersConversionArea = new JTextField();
-		CentimetersConversionArea.setHorizontalAlignment(SwingConstants.LEFT);
+		CentimetersConversionArea = new JTextArea();
 		CentimetersConversionArea.setColumns(10);
 		CentimetersConversionArea.setBackground(Color.YELLOW);
 		CentimetersConversionArea.setBounds(207, 172, 194, 161);
 		contentPane.add(CentimetersConversionArea);
 		
-		MeterConversionArea = new JTextField();
+		MeterConversionArea = new JTextArea();
 		MeterConversionArea.setEditable(false);
-		MeterConversionArea.setHorizontalAlignment(SwingConstants.LEFT);
 		MeterConversionArea.setColumns(10);
 		MeterConversionArea.setBackground(Color.ORANGE);
 		MeterConversionArea.setBounds(310, 0, 194, 161);
@@ -93,13 +90,6 @@ public class ConverterWindow extends JFrame {
 		});
 		saveInputMenuItem.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_F, InputEvent.ALT_DOWN_MASK));
 		updateModelMenu.add(saveInputMenuItem);
-	}
-	
-
-	
-	public void setFeet(String feet) {
-		this.feet = feet;
-		FeetConversionArea.setText(feet);
 	}
 	
 }
